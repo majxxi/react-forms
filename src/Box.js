@@ -1,18 +1,26 @@
 import React from 'react';
 
-function Box({id, handleRemove, backgroundColor="green", width=10, height=10}) {
+function Box(props) {
 
   return (
     <div>
       <div style={{
-          backgroundColor: backgroundColor,
-          width: `${width}em`,
-          height: `${height}em`
+          backgroundColor: props.box.backgroundColor,
+          width: `${props.box.width}em`,
+          height: `${props.box.height}em`
       }}>
       </div>
-      <button onClick={() => handleRemove(id)}>X</button>
+      <button onClick={props.box.handleRemove}>X</button>
     </div>
   );
 }
 
 export default Box;
+
+Box.defaultProps = {
+  box : {
+    backgroundColor: "green",
+    width : 10,
+    height : 10
+  }
+}

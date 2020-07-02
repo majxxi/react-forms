@@ -7,7 +7,7 @@ import uuid from "uuid/v4";
 function BoxList() {
   const [boxes, setBoxes] = useState([]);
 
-  function removeBox(id) {
+  function removeBox(id) { //refactor
     setBoxes(boxes => boxes.filter(box => box.id !== id));
   }
 
